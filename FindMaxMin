@@ -1,0 +1,75 @@
+# GuviPlayer
+
+
+import java.util.Scanner; 
+
+public class FindMaxMin {
+	static int[] arr=new int[10];
+	public static int min(int[] arr){
+		int min=2147483647;
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]==-1)
+			{
+				continue;
+			}
+			else if(arr[i]<min)
+			{
+				min=arr[i];
+			}
+			
+		}
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]==min)
+			{
+				arr[i]=-1;
+			}
+		}
+		return min;
+	}
+	public static int max(int[] arr){
+		int max=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]==-1)
+			{
+				continue;
+			}
+			else if(arr[i]>max)
+			{
+				max=arr[i];
+			}
+			
+		}
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]==max)
+			{
+				arr[i]=-1;
+			}
+		}
+		return max;
+	}
+
+
+	public static void main(String[] args) {
+		
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Enter the 10 positive values:");
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=scanner.nextInt();
+		}
+		int min1=min(arr);
+		int min2=min(arr);
+		int min3=min(arr);
+		int max1=max(arr);
+		int max2=max(arr);
+		int max3=max(arr);
+		System.out.println("The first 3 min value :"+min1+" "+min2+" "+min3);
+		System.out.println("The first 3 max value :"+max1+" "+max2+" "+max3);
+		scanner.close();
+	}
+
+}
